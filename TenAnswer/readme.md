@@ -2,4 +2,4 @@
 <b> Developer : </b> Pitchaya hutajuta <hr>
 <b> Preview : </b><br>
 <img src='./document/game-preview.png' alt='sample'><hr>
-<a href="https://github.com/PitchayaHutajuta/PitchayaHutajuta.github.io/TenAnswer"> Try it now! </a>
+<a href="https://PitchayaHutajuta/PitchayaHutajuta.github.io/TenAnswer"> Try it now! </a>
