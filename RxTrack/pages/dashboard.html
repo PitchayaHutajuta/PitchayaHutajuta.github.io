@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>ภาพรวม</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+<style>
+  span {
+    color: black;
+  }
+</style>
+
+<body style="background-color: rgb(235, 250, 255);">
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="main-wrapper">
+
+    <div class="content" style="height: 100vh;width: 95vw;margin: 0 auto;padding-top: 3rem;">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 col-12 d-flex" onclick="navigateTo('product-list.html')" style="cursor: pointer;">
+          <div class="dash-count">
+            <div class="dash-counts">
+              <h4 style="font-size: 1.2rem;">จำนวนยาในสต๊อก (ปัจจุบัน)</h4>
+              <h4><span class="counters" data-count="4248" style="color: white;"></span></h4>
+            </div>
+            <div class="dash-imgs">
+              <i data-feather="archive"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 d-flex" onclick="navigateTo('monthly-withdraw.html')"
+          style="cursor: pointer;">
+          <div class="dash-count das1" style="background-color: white;color: #131b37;">
+            <div class="dash-counts">
+              <h4 style="font-size: 1.2rem;">เบิกจ่ายในเดือนนี้</h4>
+              <h4><span class="counters" data-count="9521" style="color: #131b37;"></span></h4>
+            </div>
+            <div class="dash-imgs">
+              <i data-feather="send"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 d-flex" onclick="navigateTo('expired.html')" style="cursor: pointer;">
+          <div class="dash-count das2" style="background-color: white;color: #131b37;">
+            <div class="dash-counts">
+              <h4 style="font-size: 1.2rem;">ใกล้หมดอายุ</h4>
+              <h4><span class="counters" data-count="242" style="color: #131b37;"></span></h4>
+            </div>
+            <div class="dash-imgs">
+              <i data-feather="clock"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 col-12 d-flex" onclick="navigateTo('outstock.html')" style="cursor: pointer;">
+          <div class="dash-count das3" style="background-color: white;color: #131b37;">
+            <div class="dash-counts">
+              <h4 style="font-size: 1.2rem;">ใกล้หมด</h4>
+              <h4><span class="counters" data-count="484" style="color: #131b37;"></span></h4>
+            </div>
+            <div class="dash-imgs">
+              <i data-feather="alert-triangle"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-7 col-sm-12 col-12 d-flex">
+          <div class="card flex-fill">
+            <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+              <h5 class="card-title mb-0">รับเข้าคลัง & เบิกจ่าย</h5>
+              <div class="graph-sets">
+                <ul>
+                  <li>
+                    <span>รับเข้าคลัง</span>
+                  </li>
+                  <li>
+                    <span>เบิกจ่าย</span>
+                  </li>
+                </ul>
+                <div class="dropdown">
+                  <button class="btn btn-white btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    2023 <img src="/assets/Icons/down-arrow.png" alt="img" style="width: 10px;">
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li>
+                      <a class="dropdown-item">2023</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item">2022</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item">2021</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="sales_chart"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-sm-12 col-12 d-flex">
+          <div class="card flex-fill">
+            <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+              <h4 class="card-title mb-0">สถานะยาในสต๊อก</h4>
+              <div class="dropdown">
+                <a data-bs-toggle="dropdown" aria-expanded="false" class="dropset">
+                  <i class="fa fa-ellipsis-v"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li>
+                    <a href="productlist.html" class="dropdown-item">ดูทั้งหมด</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body" style="display: grid;justify-content: center;align-items: center;">
+              <div class="chart-container">
+                <div id="chart_div"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex" style="margin-top: 25px;">
+          <div class="card flex-fill">
+            <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+              <h4 class="card-title mb-0">เพิ่มล่าสุด</h4>
+              <div class="dropdown">
+                <a data-bs-toggle="dropdown" aria-expanded="false" class="dropset">
+                  <i class="fa fa-ellipsis-v"></i>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li>
+                    <a href="productlist.html" class="dropdown-item">ดูทั้งหมด</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive dataview">
+                <table class="table datatable ">
+                  <thead>
+                    <tr>
+                      <th style="width: 50px;">รายการที่</th>
+                      <th>รายการ</th>
+                      <th style="width: 250px;">Order ID</th>
+                      <th>วันที่รับยา</th>
+                      <th>ทำโดย</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td><a>รายการที่ 1</a></td>
+                      <td>661115001</td>
+                      <td>10/12/23</td>
+                      <td>เจ้าหน้าที่คลังยา</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td><a>รายการที่ 2</a></td>
+                      <td>661115002</td>
+                      <td>10/12/23</td>
+                      <td>เจ้าหน้าที่คลังยา</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td><a>รายการที่ 3</a></td>
+                      <td>661115003</td>
+                      <td>10/12/23</td>
+                      <td>เจ้าหน้าที่คลังยา</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td><a>รายการที่ 4</a></td>
+                      <td>661115004</td>
+                      <td>10/12/23</td>
+                      <td>เจ้าหน้าที่คลังยา</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/assets/plugins/apexchart/apexcharts.min.js"></script>
+  <script src="/assets/plugins/apexchart/chart-data.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+  <script>
+    navigateTo = (pageName) => {
+      window.location.href = "/pages/" + pageName
+
+    }
+  </script>
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script>
+    google.charts.load('current', {
+      packages: ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function
+      drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Status', 'Percentage'],
+        ['ปกติ', 3610],
+        ['ใกล้หมด', 424],
+        ['ใกล้หมดอายุ', 212]
+      ]);
+
+      var options = {
+        is3D: false,
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+  </script>
+</body>
+
+</html>

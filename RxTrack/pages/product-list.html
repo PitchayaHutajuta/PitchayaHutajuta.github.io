@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>ยอดสินค้าคงคลัง</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>ยอดสินค้าคงคลัง</h4>
+        <h6>ดูยอดสินค้าภายในคลัง, จัดการสินค้า</h6>
+      </div>
+      <div class="page-btn" style="display: flex;gap: 1rem;">
+        <a onclick="navigateTo('product-add.html')" class="btn btn-added"><img src="/assets/Icons/plus.png" alt="img"
+            class="me-1" style="width: 15px;">เพิ่ม</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="table-top">
+          <div class="search-set">
+            <div class="search-path">
+              <a class="btn btn-filter" id="filter_search">
+                <img src="/assets/Icons/funnel.png" alt="img" style="width: 20px;">
+                <span><img src="/assets/Icons/close (1).png" class="myIcons" alt="img"></span>
+              </a>
+            </div>
+            <div class="search-input">
+              <a class="btn btn-searchset"><img src="/assets/Icons/search-interface-symbol.png" alt="img"
+                  style="width: 15px;filter: opacity();"></a>
+              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label> <input type="search"
+                    class="form-control form-control-sm" placeholder="Search..."
+                    aria-controls="DataTables_Table_0"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-0" id="filter_inputs">
+          <div class="card-body pb-0">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                <div class="row">
+                  <div class="col-lg col-sm-6 col-12">
+                    <div class="form-group">
+                      <select class="select">
+                        <option>เลือกชนิดยา</option>
+                        <option>พาราเซตามอล</option>
+                        <option>ยา 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg col-sm-6 col-12">
+                    <div class="form-group">
+                      <select class="select">
+                        <option>เลือกหน่วยของยา</option>
+                        <option>ขวด</option>
+                        <option>แผง</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg col-sm-6 col-12">
+                    <div class="form-group">
+                      <select class="select">
+                        <option>สถานที่จัดเก็บ</option>
+                        <option>ตู้ A</option>
+                        <option>ตู้ B</option>
+                        <option>ตู้ C</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg col-sm-6 col-12">
+                    <div class="form-group">
+                      <select class="select">
+                        <option>สถานะ</option>
+                        <option>ปกติ</option>
+                        <option>เหลือน้อย</option>
+                        <option>ใกล้หมดอายุ</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-1 col-sm-6 col-12">
+                    <div class="form-group">
+                      <a class="btn btn-filters ms-auto"><img src="/assets/Icons/research.png" class="myIcons"
+                          alt="img"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table  datanew">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>รูป</th>
+                <th>ชื่อยา</th>
+                <th>SN</th>
+                <th>หมวดหมู่</th>
+                <th>สถานะ</th>
+                <th>คงเหลือ</th>
+                <th>หน่วย</th>
+                <th>ที่จัดเก็บ</th>
+                <th>วันที่เพิ่ม</th>
+                <th>MFG</th>
+                <th>EXP</th>
+                <th>เพิ่มโดย</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/Icons/paracetamol.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a onclick="navigateTo('product-detail.html')" style="color: black;">Paracetamol 500mg</a></td>
+                <td>SN10000013</td>
+                <td>ยาลดไข้</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>100</td>
+                <td>กล่อง</td>
+                <td>ชั้น A01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/Chlorpheniramine.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Chlorpheniramine</a></td>
+                <td>SN10000014</td>
+                <td>ยาแก้แพ้</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>100</td>
+                <td>ขวด</td>
+                <td>ชั้น A01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/Mebendazole.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Mebendazole</a></td>
+                <td>SN10000015</td>
+                <td>ยาถ่ายพยาธิ</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>100</td>
+                <td>กล่อง</td>
+                <td>ชั้น B01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/Dimenhydrinate.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Dimenhydrinate</a></td>
+                <td>SN10000016</td>
+                <td>ยาแก้เมารถ</td>
+                <td>
+                  <div class="item-status-expired">
+                    <p>ใกล้หมดอายุ</p>
+                  </div>
+                </td>
+                <td>28</td>
+                <td>กล่อง</td>
+                <td>ชั้น A01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/GLYCERIN.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>GLYCERIN</a></td>
+                <td>SN10000017</td>
+                <td>ยาระบาย</td>
+                <td>
+                  <div class="item-status-almost">
+                    <p>ใกล้หมด</p>
+                  </div>
+                </td>
+                <td>9</td>
+                <td>กล่อง</td>
+                <td>ชั้น C01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/Atarax.png" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Atarax 25mg</a></td>
+                <td>SN10000018</td>
+                <td>ยาแก้แพ้</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>100</td>
+                <td>แผง</td>
+                <td>ชั้น C01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/Motilium.png" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Motilium</a></td>
+                <td>SN10000019</td>
+                <td>ยาแก้คลื่นไส้</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>100</td>
+                <td>กล่อง</td>
+                <td>ชั้น A01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/Betadine.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Betadine</a></td>
+                <td>SN10000020</td>
+                <td>ยาฆ่าเชื้อใช้ภายนอก</td>
+                <td>
+                  <div class="item-status-almost">
+                    <p>ใกล้หมด</p>
+                  </div>
+                </td>
+                <td>10</td>
+                <td>ขวด</td>
+                <td>ชั้น A01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/Betamine.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Betamine</a></td>
+                <td>SN10000021</td>
+                <td>ยาแก้ภูมิแพ้</td>
+                <td>
+                  <div class="item-status-expired">
+                    <p>ใกล้หมดอายุ</p>
+                  </div>
+                </td>
+                <td>15</td>
+                <td>กระปุก</td>
+                <td>ชั้น B01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/cefazolin.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>Cefazolin</a></td>
+                <td>SN10000022</td>
+                <td>ยาปฎิชีวนะ</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>100</td>
+                <td>ขวด</td>
+                <td>ชั้น B01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/images/amoksiklav.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>amoksiklav</a></td>
+                <td>SN10000023</td>
+                <td>ยาฆ่าเชื้อ</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>100</td>
+                <td>กล่อง</td>
+                <td>ชั้น C01</td>
+                <td>15/10/23</td>
+                <td>15/10/20</td>
+                <td>15/10/26</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const navigateTo = (pageName) => {
+      window.location.href = pageName;
+    }
+  </script>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/plugins/select2/js/select2.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

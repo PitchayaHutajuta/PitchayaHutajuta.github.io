@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>ยอดสินค้าคงคลัง</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>แก้ไขข้อมูลยา</h4>
+        <h6>แก้ไขข้อมูลยา</h6>
+        <div
+          style="display: flex;align-items: center;margin-top: 20px;gap: 5px;color: #777777;background-color: #ffffff;width: 90vw;height: 50px;padding-left: 20px;border: 1px solid #e8ebed;border-radius: 5px;">
+          <a onclick="navigateTo('dashboard.html')" style="color: #777777;font-size: 1rem;">ภาพรวม</a>>
+          <a onclick="history.back()" style="color: #777777;font-size: 1rem;">ยอดสินค้าคงคลัง</a>>
+          <a style="color: #777777;font-size: 1rem;">แก้ไขข้อมูลยา</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>ชื่อยา</label>
+              <input type="text" value="พาราเซตามอล">
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>หมวดหมู่</label>
+              <select class="select">
+                <option>ยาแก้ปวด/ลดไข้</option>
+                <option>หมวดหมู่ 1</option>
+                <option>หมวดหมู่ 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>หน่วยเก็บ</label>
+              <select class="select">
+                <option>แผง</option>
+                <option>กระปุก</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>จำนวนคงเหลือ</label>
+              <input type="text" value="50">
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="form-group">
+              <label>ที่จัดเก็บยา</label>
+              <select class="select">
+                <option>ชั้นวาง A01</option>
+                <option>ชั้นวาง B01</option>
+                <option>ชั้นวาง C01</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label>คำอธิบาย</label>
+              <textarea class="form-control"
+                style="color: rgb(99, 115, 129);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</textarea>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label> รูปยา</label>
+              <div class="image-upload">
+                <input type="file">
+                <div class="image-uploads">
+                  <img src="/assets/Icons/downloads.png" alt="img" style="width: 50px; opacity: 30%;">
+                  <h4>อัพโหลดรูปภาพ</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <a class="btn btn-submit me-2">ยืนยัน</a>
+            <a onclick="history.back()" class="btn btn-cancel">กลับ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const navigateTo = (pageName) => {
+      window.location.href = pageName;
+    }
+  </script>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/plugins/select2/js/select2.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

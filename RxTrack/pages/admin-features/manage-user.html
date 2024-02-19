@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>จัดการผู้ใช้</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body onload="updateData()">
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>จัดการผู้ใช้</h4>
+        <h6>รายชื่อผู้ใช้งานระบบ, กำหนดตำแหน่ง, ตั้งค่าข้อมูลผู้ใช้, เพิ่มผู้ใช้</h6>
+      </div>
+      <div class="page-btn">
+        <a onclick="navigateTo('add-user.html')" class="btn btn-added"><img src="/assets/Icons/plus.png" alt="img"
+            class="me-1" style="width: 15px;">เพิ่ม</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="table-top">
+          <div class="search-set">
+            <div class="search-input">
+              <a class="btn btn-searchset"><img src="/assets/Icons/search-interface-symbol.png" alt="img"
+                  style="width: 15px;"></a>
+              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label> <input type="search"
+                    class="form-control form-control-sm" placeholder="Search..."
+                    aria-controls="DataTables_Table_0"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table  datanew">
+            <thead>
+              <tr>
+                <th style="width: 50px;">No.</th>
+                <th style="width: 50px;">รูป</th>
+                <th style="width: 100px;">รหัสผู้ใช้</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>ชื่อผู้ใช้</th>
+                <th>เบอร์ติดต่อ</th>
+                <th>อีเมล</th>
+                <th>ตำแหน่ง</th>
+                <th>สถานะ</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/Icons/profile-pic.png" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>661115001</a></td>
+                <td id="username-name"></td>
+                <td>admin</td>
+                <td>000-000-0000</td>
+                <td>user@email.com</td>
+                <td>admin</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('user-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/Icons/profile-pic.png" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>661115002</a></td>
+                <td id="user1name-name"></td>
+                <td>staff</td>
+                <td>000-000-0000</td>
+                <td>user@email.com</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('user-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/Icons/profile-pic.png" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>661115003</a></td>
+                <td>Piyakrit Wongkasemsak</td>
+                <td>staff</td>
+                <td>000-000-0000</td>
+                <td>user@email.com</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <div class="item-status-normal">
+                    <p>ปกติ</p>
+                  </div>
+                </td>
+                <td>
+                  <a class="me-3">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+  <script>
+    const navigateTo = (pageName) => {
+      window.location.href = pageName
+    }
+
+    const updateData = () => {
+      let displayName = document.getElementById('username-name');
+      let displayName1 = document.getElementById('user1name-name');
+      let userName = localStorage.getItem('name');
+      let user1Name = localStorage.getItem('user1name');
+      displayName.innerText = userName
+      displayName1.innerText = user1Name
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>ตรวจสอบจำนวนยาในสต๊อก</title>
+  
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>ตรวจสอบจำนวนยาในสต๊อก</h4>
+        <h6>ตรวจสอบจำนวนยาในสต๊อก</h6>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="form-group">
+              <div class="input-group"
+                style="margin-top: 20px;margin-left: 10px;display: flex;justify-content: start;align-items: center;position: relative;">
+                <div class="input-group-prepend" style="display: flex;justify-content: start;align-items: center;">
+                  <h5 style="color: #131b37;">ชื่อยา / Barcode :&nbsp&nbsp</h5>
+                  <input type="text" class="form-control" placeholder="" style="width: 400px;margin-bottom: 7px;">
+                </div>
+                <button type="button" class="btn" onclick="showProduct()"
+                  style="background-color: rgb(19, 27, 55);margin-bottom: 8px;margin-left: 20px;height: 35px;width: 100px;border-radius: 5px; display: flex;justify-content: start;align-items: center;">
+                  <i data-feather="search" style="color: white;"></i>
+                  <span style="margin-left: 5px;">ค้นหา</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;margin-bottom: 40px;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th style="width: 50px">รูป</th>
+                  <th>ชื่อยา</th>
+                  <th>SN</th>
+                  <th>หมวดหมู่</th>
+                  <th>สถานะ</th>
+                  <th>คงเหลือ</th>
+                  <th>หน่วย</th>
+                  <th>ที่จัดเก็บ</th>
+                  <th>วันที่เพิ่ม</th>
+                  <th>MFG</th>
+                  <th>EXP</th>
+                  <th>เพิ่มโดย</th>
+                  <th>จัดการ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="exProduct" class="hiding">
+                  <td>1</td>
+                  <td>
+                    <a class="product-img">
+                      <img src="/assets/Icons/paracetamol.jpg" class="myIcons" alt="product">
+                    </a>
+                  </td>
+                  <td><a >พาราเซตามอล 500mg</a></td>
+                  <td>SN10000013</td>
+                  <td>ยาลดไข้</td>
+                  <td>
+                    <div class="item-status-normal">
+                      <p>ปกติ</p>
+                    </div>
+                  </td>
+                  <td>100</td>
+                  <td>แผง</td>
+                  <td>ชั้น A01</td>
+                  <td>15/10/23</td>
+                  <td>15/10/20</td>
+                  <td>15/10/26</td>
+                  <td>เจ้าหน้าที่คลัง</td>
+                  <td>
+
+                    <a class="me-3" onclick="navigateTo('product-edit.html')" onclick="navigateTo('product-edit.html')">
+                      <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                    </a>
+                    <a class="confirm-text" >
+                      <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/feather.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+
+    <script>
+      const submitBtn = () => {
+
+      }
+      navigateTo = (pageName) => {
+        window.location.href = "/pages/" + pageName
+
+      }
+
+      const showProduct = () => {
+        let exProduct = document.getElementById('exProduct');
+        // console.log(exProduct)
+        exProduct.classList.remove('hiding')
+      }
+    </script>
+</body>
+
+</html>

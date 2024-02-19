@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>โปรไฟล์ของฉัน</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+
+</head>
+
+<body onload="updateData()">
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>โปรไฟล์ของฉัน</h4>
+        <h6>ข้อมูลส่วนตัว</h6>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="profile-set">
+          <div class="profile-head">
+          </div>
+          <div class="profile-top">
+            <div class="profile-content">
+              <div class="profile-contentimg">
+                <img src="/assets/Icons/profile-pic.png" alt="img" id="blah">
+                <div class="profileupload">
+                  <input type="file" id="imgInp">
+                </div>
+              </div>
+              <div class="profile-contentname">
+                <h2 id="displayName"></h2>
+                <h4>สามารถแก้ไขข้อมูล และเปลี่ยนรูปโปรไฟล์ได้</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-sm-12">
+            <div class="form-group">
+              <label>ชื่อจริง</label>
+              <input type="text" id="firstNameTxt" value="">
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <div class="form-group">
+              <label>นามสกุล</label>
+              <input type="text" id="lastNameTxt" value="">
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <div class="form-group">
+              <label>อีเมล</label>
+              <input type="text" id="emailTxt" value="myemail@example.com" readonly>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <div class="form-group">
+              <label>เบอร์ติดต่อ</label>
+              <input type="text" id="telTxt" value="000-000-0000" readonly>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <div class="form-group">
+              <label>ชื่อผู้ใช้</label>
+              <input type="text" id="userNameTxt" value="admin" readonly>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-12">
+            <div class="form-group">
+              <label>รหัสผ่าน</label>
+              <div class="pass-group">
+                <input type="password" class="pass-input" id="passwordInput" value="****" readonly>
+                <span class="fas toggle-password fa-eye-slash" onclick="togglePassword()"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <a class="btn btn-submit me-2" onclick="profileEdit()">ยืนยัน</a>
+            <a class="btn btn-cancel" onclick="history.back()">ย้อนกลับ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+  <script>
+    const updateData = () => {
+      // debugger
+      document.getElementById('firstNameTxt').value = localStorage.getItem('firstName');
+      document.getElementById('lastNameTxt').value = localStorage.getItem('lastName');
+      const showName = document.getElementById('displayName');
+      showName.innerText = ''
+      let userName = localStorage.getItem('name', name);
+      showName.innerText = userName;
+
+    }
+    const togglePassword = () => {
+      var x = document.getElementById("passwordInput");
+      if (x.value === "0000") {
+        x.value = "****";
+      } else {
+        x.value = "0000";
+      }
+    }
+
+    const profileEdit = () => {
+      debugger
+      const showName = document.getElementById('displayName');
+      let firstName = document.getElementById('firstNameTxt').value;
+      let lastName = document.getElementById('lastNameTxt').value;
+      let email = document.getElementById('emailTxt');
+      let tel = document.getElementById('telTxt');
+      let userName = document.getElementById('userNameTxt');
+      if (firstName === "" && lastName === "") {
+        alert('กรุณาใส่ชื่อ-นามสกุล')
+      } else if (firstName === "") {
+        alert('กรุณาใส่ชื่อ')
+      } else if (lastName === "") {
+        alert('กรุณาใส่นามสกุล')
+      } else {
+        localStorage.setItem('firstName', firstName);
+        localStorage.setItem('lastName', lastName);
+        localStorage.setItem('name', firstName + " " + lastName);
+        updateData()
+      }
+
+    }
+
+
+
+  </script>
+</body>
+
+</html>

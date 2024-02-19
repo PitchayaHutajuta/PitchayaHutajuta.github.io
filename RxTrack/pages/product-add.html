@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>รับสินค้าเข้าคลัง</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>รับยาเข้าคลัง</h4>
+        <h6>เพิ่มยาเข้าสต๊อก, ตั้งค่าหมวดหมู่, ประเภท, กำหนดที่จัดเก็บ</h6>
+        <div
+          style="display: flex;align-items: center;margin-top: 20px;gap: 5px;color: #777777;background-color: #ffffff;width: 90vw;height: 50px;padding-left: 20px;border: 1px solid #e8ebed;border-radius: 5px;">
+          <a onclick="navigateTo('dashboard.html')" style="color: #777777;font-size: 1rem;">ภาพรวม</a>>
+          <a onclick="history.back()" style="color: #777777;font-size: 1rem;">ประวัติการรับยาเข้าคลัง</a>>
+          <a style="color: #777777;font-size: 1rem;">รับยาเข้าคลัง</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header col-lg-12">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="form-group">
+                <label>Barcode</label>
+                <input type="text" value="SN10000013">
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="form-group">
+                <label>ชื่อยา</label>
+                <input type="text" value="พาราเซตามอล 500mg">
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="form-group">
+                <label>ประเภท</label>
+                <select class="select">
+                  <option>ยาอันตราย</option>
+                  <option>ยาลดไข้</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="form-group">
+                <label>ที่จัดเก็บ</label>
+                <select class="select">
+                  <option>ชั้น A01</option>
+                  <option>ชั้น A02</option>
+                  <option>ชั้น A03</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="form-group">
+                <label>จำนวน</label>
+                <input type="text">
+              </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="form-group">
+                <label>หน่วย</label>
+                <select class="select">
+                  <option>กระปุก</option>
+                  <option>แผง</option>
+                  <option>ขวด</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group">
+                <label>คำอธิบาย</label>
+                <textarea class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="col-lg-10">
+              <div class="form-group">
+                <label> รูปยา</label>
+                <div class="image-upload">
+                  <input type="file">
+                  <div class="image-uploads">
+                    <img src="/assets/Icons/downloads.png" alt="img" style="width: 30px; opacity: 70%;">
+                    <h4>อัพโหลดรูปภาพ</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-1">
+              <div class="form-group">
+                <label>เพิ่มยา</label>
+                <a  class="btn btn-submit me-2">เพิ่ม</a>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <a onclick="navigateTo('product-add-history.html')" class="btn btn-submit me-2">ยืนยัน</a>
+              <a onclick="navigateTo('product-add-history.html')" class="btn btn-cancel">ย้อนกลับ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="display: flex;justify-content: center;align-items: center;">
+      <div class="col-lg-11 d-flex" style="margin-top: 25px;">
+        <div class="card flex-fill">
+          <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+            <h4 class="card-title mb-0">ยาที่เพิ่ม</h4>
+            <div class="dropdown">
+              <a  data-bs-toggle="dropdown" aria-expanded="false" class="dropset">
+                <i class="fa fa-ellipsis-v"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a href="productlist.html" class="dropdown-item">ดูทั้งหมด</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive" style="margin-bottom: 30px;">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th style="width: 50px">รูป</th>
+                    <th>ชื่อยา</th>
+                    <th>SN</th>
+                    <th>หมวดหมู่</th>
+                    <th>สถานะ</th>
+                    <th>คงเหลือ</th>
+                    <th>หน่วย</th>
+                    <th>ที่จัดเก็บ</th>
+                    <th>วันที่เพิ่ม</th>
+                    <th>เพิ่มโดย</th>
+                    <th>จัดการ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <a  class="product-img">
+                        <img src="/assets/Icons/paracetamol.jpg" class="myIcons" alt="product">
+                      </a>
+                    </td>
+                    <td><a >พาราเซตามอล 500mg</a></td>
+                    <td>SN10000013</td>
+                    <td><select class="select">
+                      <option>ยาลดไข้</option>
+                      <option>ยาฆ่าเชื้อ</option>
+                      <option>ยาอันตราย</option>
+                    </select></td>
+                    <td>
+                      <div class="item-status-normal">
+                        <p>ปกติ</p>
+                      </div>
+                    </td>
+                    <td style="width: 150px;"><input type="number" style="width: 50%;" value="100"></td>
+                    <td><select class="select">
+                      <option>แผง</option>
+                      <option>กระปุก</option>
+                      <option>ขวด</option>
+                    </select></td>
+                    <td><select class="select">
+                      <option>ชั้น A01</option>
+                      <option>ชั้น A02</option>
+                      <option>ชั้น A03</option>
+                    </select></td>
+                    <td>15/10/23</td>
+                    <td>เจ้าหน้าที่คลัง</td>
+                    <td>
+                      <a class="confirm-text" >
+                        <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    
+                    <td>2</td>
+                    <td>
+                      <a  class="product-img">
+                        <img src="/assets/images/amoksiklav.jpg" class="myIcons" alt="product">
+                      </a>
+                    </td>
+                    <td><a >Amosksiklav</a></td>
+                    <td>SN10000023</td>
+                    <td><select class="select">
+                      <option>ยาฆ่าเชื้อ</option>
+                      <option>ยาลดไข้</option>
+                      <option>ยาอันตราย</option>
+                    </select></td>
+                    <td>
+                      <div class="item-status-normal">
+                        <p>ปกติ</p>
+                      </div>
+                    </td>
+                    <td style="width: 150px;"><input type="number" style="width: 50%;" value="100"></td>
+                    <td><select class="select">
+                      <option>แผง</option>
+                      <option>กระปุก</option>
+                      <option>ขวด</option>
+                    </select></td>
+                    <td><select class="select">
+                      <option>ชั้น C01</option>
+                      <option>ชั้น A02</option>
+                        <option>ชั้น A03</option>
+                      </select></td>
+                    <td>15/10/23</td>
+                    <td>เจ้าหน้าที่คลัง</td>
+                    <td>
+                      <a class="confirm-text" >
+                        <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <script>
+      navigateTo = (pageName) => {
+        window.location.href = "/pages/" + pageName
+
+      }
+    </script>
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/feather.min.js"></script>
+    <script src="/assets/js/jquery.dataTables.min.js"></script>
+    <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/plugins/select2/js/select2.min.js"></script>
+    <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

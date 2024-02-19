@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>ประวัติการเบิกจ่ายยา</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>ประวัติการเบิกจ่ายยา</h4>
+        <h6>เบิกจ่ายยา, ประวัติการเบิกจ่ายยา</h6>
+      </div>
+      <div class="page-btn">
+        <a onclick="navigateTo('withdraw-add.html')" class="btn btn-added"><img src="/assets/Icons/plus.png" alt="img"
+            class="me-1" style="width: 15px;">เพิ่ม</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="table-top">
+          <div class="search-set">
+            <div class="search-input">
+              <a class="btn btn-searchset"><img src="/assets/Icons/search-interface-symbol.png" alt="img"
+                  style="width: 15px;"></a>
+              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label> <input type="search"
+                    class="form-control form-control-sm" placeholder="Search..."
+                    aria-controls="DataTables_Table_0"></label>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="table-responsive">
+          <table class="table  datanew">
+            <thead>
+              <tr>
+                <th style="width: 50px;">รายการที่</th>
+                <th>รายการ</th>
+                <th style="width: 250px;">Order ID</th>
+                <th>วัน-เวลาที่เบิกจ่าย</th>
+                <th>เบิกจ่ายโดย</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><a>รายการเบิกที่ 1</a></td>
+                <td>661115001</td>
+                <td>10/12/23 - 14:00</td>
+                <td>เจ้าหน้าที่คลังยา</td>
+                <td>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+
+                <td>2</td>
+                <td><a>รายการเบิกที่ 2</a></td>
+                <td>661115002</td>
+                <td>10/12/23 - 14:00</td>
+                <td>เจ้าหน้าที่คลังยา</td>
+                <td>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+
+                <td>3</td>
+                <td><a>รายการเบิกที่ 3</a></td>
+                <td>661115003</td>
+                <td>10/12/23 - 14:00</td>
+                <td>เจ้าหน้าที่คลังยา</td>
+                <td>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td><a>รายการเบิกที่ 4</a></td>
+                <td>661115004</td>
+                <td>10/12/23 - 14:00</td>
+                <td>เจ้าหน้าที่คลังยา</td>
+                <td>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    navigateTo = (pageName) => {
+      window.location.href = "/pages/" + pageName
+
+    }
+  </script>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

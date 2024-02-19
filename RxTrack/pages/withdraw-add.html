@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>เบิกจ่ายยา</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>เบิกจ่ายยา</h4>
+        <h6>เบิกจ่ายยา, ประวัติการเบิกจ่ายยา</h6>
+        <div
+          style="display: flex;align-items: center;margin-top: 20px;gap: 5px;color: #777777;background-color: #ffffff;width: 90vw;height: 50px;padding-left: 20px;border: 1px solid #e8ebed;border-radius: 5px;">
+          <a onclick="navigateTo('dashboard.html')" style="color: #777777;font-size: 1rem;">ภาพรวม</a>>
+          <a onclick="history.back()" style="color: #777777;font-size: 1rem;">ประวัติการเบิกจ่ายยา</a>>
+          <a style="color: #777777;font-size: 1rem;">เบิกจ่ายยา</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-12">
+            <div class="form-group">
+              <label>ชื่อผู้รับยา(ผู้ป่วย)</label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="ชื่อ">
+                <input type="text" class="form-control" placeholder="นามสกุล">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <div class="input-group"
+                style="display: flex;justify-content: start;align-items: center;position: relative;">
+
+                <select class="custom-select" id="inputGroupSelect01"
+                  style="width: 35%;height: 35px;margin-bottom: 8px;border-top-right-radius: 5px;border-bottom-right-radius: 5px;border: 1px solid rgb(217, 217, 217);">
+                  <option selected>เลือกยา</option>
+                  <option value="1">ยา 1</option>
+                  <option value="2">ยา 2</option>
+                  <option value="3">ยา 3</option>
+                </select>
+                <button type="button" class="btn"
+                  style="background-color: rgb(19, 27, 55);margin-bottom: 8px;margin-left: 20px;height: 35px;width: 100px;border-radius: 5px; display: flex;justify-content: start;align-items: center;">
+                  <i data-feather="plus" style="color: white;"></i>
+                  <span style="margin-left: 5px;">เพิ่มยา</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive" style="margin-top: 20px;margin-bottom: 40px;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">รายการที่</th>
+                  <th style="width: 250px;">Batch No.</th>
+                  <th>ชื่อยา</th>
+                  <th>ประเภทยา</th>
+                  <th>หมดอายุวันที่</th>
+                  <th>จำนวน</th>
+                  <th>หน่วย</th>
+                  <th>เบิกจ่ายโดย</th>
+                  <th>จัดการ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  <td>1</td>
+                  <td>TLLJT21</td>
+                  <td><a>ยา 1</a></td>
+                  <td>ยาแก้ปวด</td>
+                  <td>10/12/23</td>
+                  <td><input type="number" style="width: 50px;"></td>
+                  <td>แผง</td>
+                  <td>เจ้าหน้าที่จัดซื้อ</td>
+                  <td>
+                    <a class="confirm-text" href="javascript:void(0);">
+                      <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+
+                  <td>2</td>
+                  <td><a href="javascript:void(0);">TLLJT22</a></td>
+                  <td><a>ยา 2</a></td>
+                  <td>ยาแก้ปวด</td>
+                  <td>10/12/23</td>
+                  <td><input type="number" style="width: 50px;"></td>
+                  <td>แผง</td>
+                  <td>เจ้าหน้าที่จัดซื้อ</td>
+                  <td>
+                    <a class="confirm-text" href="javascript:void(0);">
+                      <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+
+                  <td>3</td>
+                  <td><a href="javascript:void(0);">TLLJT23</a></td>
+                  <td><a>ยา 3</a></td>
+                  <td>ยาแก้ปวด</td>
+                  <td>10/12/23</td>
+                  <td><input type="number" style="width: 50px;"></td>
+                  <td>แผง</td>
+                  <td>เจ้าหน้าที่จัดซื้อ</td>
+                  <td>
+                    <a class="confirm-text" href="javascript:void(0);">
+                      <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                    </a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td><a href="javascript:void(0);">TLLJT24</a></td>
+                  <td><a>ยา 4</a></td>
+                  <td>ยาแก้ปวด</td>
+                  <td>10/12/23</td>
+                  <td><input type="number" style="width: 50px;"></td>
+                  <td>แผง</td>
+                  <td>เจ้าหน้าที่จัดซื้อ</td>
+                  <td>
+                    <a class="confirm-text" href="javascript:void(0);">
+                      <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="col-lg-12">
+            <a onclick="history.back()" class="btn btn-submit me-2">ยืนยัน</a>
+            <a onclick="history.back()" class="btn btn-cancel">ยกเลิก</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/plugins/select2/js/select2.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

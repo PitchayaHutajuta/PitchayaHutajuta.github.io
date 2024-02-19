@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>Staff-MasterPage</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body style="overflow: hidden;background-color: rgb(235, 250, 255);" onload="navigateTo('product-list.html')">
+  <div class="main-wrapper">
+
+
+    <!-- ---------- Header ----------- -->
+    <div class="header">
+      <div
+        style="width: 1660px;height: 100%;right: 0;position: absolute;display: flex;justify-content: start;align-items: center;">
+        <!-- <a onclick="toggleSidebar()" class="align-items-center justify-content-center" style="display: grid;">
+          <img src="/assets/Icons/hamburger.png" alt="toggle sidebar" style="width: 20px;margin-left: 20px">
+        </a> -->
+        <p style="margin-left: 1rem;color: #777777;">พฤศจิกายน 29, 2023</p>
+      </div>
+      <div class="header-left active">
+        <!-- empty -->
+      </div>
+
+      <ul class="nav user-menu">
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+            <img src="/assets/Icons/notification (1).png" alt="img" style="height: 25px;">
+            <span class="badge rounded-pill" style="margin-right: 10px;">2</span>
+          </a>
+          <div class="dropdown-menu notifications">
+            <div class="topnav-dropdown-header">
+              <span class="notification-title">การแจ้งเตือน</span>
+              <a class="clear-noti"> ปิด </a>
+            </div>
+            <div class="noti-content">
+              <ul class="notification-list">
+                <li class="notification-message">
+                  <a onclick="navigateTo('expired.html')">
+                    <div class="media d-flex">
+                      <img src="/assets/Icons/paracetamol.jpg" alt="product"
+                        style="width: 35px;height: 35px;margin-right: 10px;">
+                      <div class="media-body flex-grow-1">
+                        <p class="noti-details"><span class="noti-title">พาราเซตามอล</span> จะหมดอายุ <span
+                            class="noti-title">ในวันที่ 01/01/24</span></p>
+                        <p class="noti-time"><span class="notification-time">อีก 30 วัน</span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a onclick="navigateTo('outstock.html')">
+                    <div class="media d-flex">
+                      <img src="/assets/Icons/paracetamol.jpg" alt="product"
+                        style="width: 35px;height: 35px;margin-right: 10px;">
+                      <div class="media-body flex-grow-1">
+                        <p class="noti-details"><span class="noti-title">พาราเซตามอล</span> ใกล้จะหมดสต๊อก <span
+                            class="noti-title">เหลืออีก 20 กล่อง </span></p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="topnav-dropdown-footer">
+            </div>
+          </div>
+        </li>
+
+        <!-- ---------- Profile ----------- -->
+        <li class="nav-item dropdown has-arrow main-drop">
+          <a class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+            <span class="user-img"><img alt="" src="/assets/Icons/profile-pic.png">
+              <span class="status online"></span></span>
+          </a>
+          <div class="dropdown-menu menu-drop-user">
+            <div class="profilename">
+              <div class="profileset">
+                <span class="user-img"><img alt="" src="/assets/Icons/profile-pic.png">
+                  <span class="status online"></span></span>
+                <div class="profilesets">
+                  <h6 id="username-name">Kittipat Pramjit</h6>
+                  <h5>Staff</h5>
+                </div>
+              </div>
+              <hr class="m-0">
+              <a class="dropdown-item" onclick="navigateTo('staff-profile-view.html')"> <i class="me-2"
+                  data-feather="user"></i> โปรไฟล์ของฉัน</a>
+              <hr class="m-0">
+              <a class="dropdown-item logout pb-0" href="../index.html"><i data-feather="log-out"></i>ออกจากระบบ</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+    <!-- ---------- Menu Sidebar ----------- -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-inner slimscroll" style="background-color: #131B37">
+        <img src="/assets/Icons/RxTrack-logo-white.png" alt="logo"
+          style="width: 150px;position: absolute;top: -30px;left: 55px;">
+
+        <div id="sidebar-menu" class="sidebar-menu" style="margin-top: 5rem;">
+          <ul>
+            <li>
+              <a onclick="navigateTo('dashboard.html')"><img src="/assets/Icons/dashboard.png" alt="img"
+                  style="width: 20 px;"><span style="font-size: 1rem;">
+                  ภาพรวม</span> </a>
+            </li>
+            <li>
+              <span class="dropdown-header" style="margin-top: 1.5rem;">จัดการคลัง</span>
+            </li>
+            <li>
+              <a onclick="navigateTo('barcodeCheck.html')"><img src="/assets/Icons/barcode.png" alt="img"><span
+                  style="font-size: 1rem;">
+                  เช็คจำนวนยา</a>
+            </li>
+
+            <!-- ---------- คลัง ----------- -->
+            <li class="submenu">
+              <a><img src="/assets/Icons/box.png" alt="img"><span style="font-size: 1rem;">คลัง</span>
+                <span class="menu-arrow"></span></a>
+              <ul style="background-color: #16203f;">
+                <li>
+                  <a onclick="navigateTo('product-add-history.html')">รับเข้าคลัง</a>
+                </li>
+                <li>
+                  <a onclick="navigateTo('product-list.html')">คงคลัง</a>
+                </li>
+                <li>
+                  <a onclick="navigateTo('withdraw.html')">ขอเบิก</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- ---------- ตั้งค่าคลัง ----------- -->
+            <li class="submenu">
+              <a><img src="/assets/Icons/store.png" alt="img"><span style="font-size: 1rem;">
+                  ตั้งค่าคลัง</span>
+                <span class="menu-arrow"></span></a>
+              <ul style="background-color: #16203f;">
+                <li>
+                  <a onclick="navigateTo('category-list.html')">หมวดหมู่</a>
+                </li>
+                <li>
+                  <a onclick="navigateTo('measurement-list.html')">หน่วยเก็บ</a>
+                </li>
+                <li>
+                  <a onclick="navigateTo('location-list.html')">ที่จัดเก็บ</a>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------- หน้าจอ Iframe หลัก ----------- -->
+    <div class="page-wrapper">
+      <iframe class="main" id="displayPage" style="width: 87vw;height: 94vh;overflow: hidden;">
+
+      </iframe>
+    </div>
+  </div>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/jquery.slimscroll.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const navigateTo = (pageName) => {
+      document.getElementById("displayPage").src = pageName;
+      // let displayName = document.getElementById('username-name');
+      // let userName = localStorage.getItem('name', name);
+      // displayName.innerText = userName
+    }
+
+    // const toggleSidebar = () => {
+    //   console.log('sidebar is toggle')
+    //   document.getElementById('sidebar').classList.add("sidebarToggle");
+    // }
+
+  </script>
+</body>
+
+</html>

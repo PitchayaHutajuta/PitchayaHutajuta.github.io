@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>ที่จัดเก็บ</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>ที่จัดเก็บ</h4>
+        <h6>ที่จัดเก็บของยา</h6>
+      </div>
+      <div class="page-btn">
+        <a onclick="navigateTo('location-add.html')" class="btn btn-added"><img src="/assets/Icons/plus.png" alt="img" class="me-1"
+            style="width: 15px;">เพิ่ม</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="table-top">
+          <div class="search-set">
+            <div class="search-input">
+              <a class="btn btn-searchset"><img src="/assets/Icons/search-interface-symbol.png" alt="img"
+                  style="width: 15px;filter: opacity();"></a>
+              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label> <input type="search"
+                    class="form-control form-control-sm" placeholder="Search..."
+                    aria-controls="DataTables_Table_0"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table  datanew">
+            <thead>
+              <tr>
+                <th>ชื่อที่จัดเก็บ</th>
+                <th>ห้อง</th>
+                <th>จำนวนยาที่จัดเก็บ</th>
+                <th>ความจุ</th>
+                <th>สร้างโดย</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a>ตู้ A01</a>
+                </td>
+                <td>ห้อง 105</td>
+                <td>560</td>
+                <td>500</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('location-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td >
+                  <a>ตู้ B01</a>
+                </td>
+                <td>ห้อง 105</td>
+                <td>435</td>
+                <td>500</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('location-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td >
+                  <a>ตู้ C01</a>
+                </td>
+                <td>ห้อง 105</td>
+                <td>989</td>
+                <td>500</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('location-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+
+              <tr>
+                <td >
+                  <a>ตู้ A02</a>
+                </td>
+                <td>ห้อง 106</td>
+                <td>505</td>
+                <td>500</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('location-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    navigateTo = (pageName) => {
+      window.location.href = "/pages/" + pageName
+
+    }
+  </script>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css” />
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Login</title>
+
+  <style>
+    * {
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="backgrounds">
+    <div class="contentt">
+      
+      <div class="left-section">
+        <div class="logo-section" style="display: flex;align-items: start;margin-top: 50px;">
+          <img src="assets/Icons/RxTrack-logo-white.png" alt="LOGO IMAGE" style="width: 200px;margin-left: 50px;">
+        </div>
+        <div class="welcome-message">
+          <h1 style="font-weight: bold;font-size: 2.5rem;">ระบบบริหารจัดการคลังยา</h1>
+          <h5 style="font-weight: bold;font-size: 1.3rem;">Medical Inventory Management System</h4>
+          <h7><br>Username : admin<br>Password : 0000</br></h7>
+        </div>
+      </div>
+
+      <div class="right-section">
+        <div style="display: grid;align-items: center;color: rgb(19, 27, 55);">
+          <h1 style="font-weight: bolder;font-size: 3rem;color: #131b37;">เข้าสู่ระบบ</h1>
+          <p></p>
+        </div>
+        <div style="display: grid;gap: 20px;">
+          <div class="get-input" style="color: rgb(19, 27, 55);">
+            <h5 class="form-label" style="font-size: 1rem;color: #131b37a4;">ชื่อผู้ใช้</h5>
+            <div style="display: flex;position: relative;align-items: center;">
+              <input class="form-control" id="usernameInput" type="text" class="form-control"
+                style="height: 2.5rem;font-size: 1rem;color: #131b37a4;">
+              <img src="assets/Icons/user (1).png" alt="hide"
+                style="width: 20px;height:20px;position: absolute;right: 10px;opacity: 50%;">
+            </div>
+            <div class="invalid-feedback">
+              กรุณากรอกชื่อผู้ใช้
+            </div>
+          </div>
+
+          <div class="get-input" style="color: rgb(19, 27, 55);">
+            <h5 class="form-label" style="font-size: 1rem;color: #131b37a4;">รหัสผ่าน</h5>
+            <div style="display: flex;position: relative;align-items: center;">
+              <img id="togglePasswordBtn" onclick="togglePassword()" src="assets/Icons/hide.png" alt="hide"
+                style="width: 20px;height:20px;position: absolute;right: 10px;opacity: 50%;">
+              <input class="form-control" id="passwordInput" type="password" class="form-control"
+                style="height: 2.5rem;font-size: 1rem;color: #131b37a4;">
+            </div>
+            <div class="invalid-feedback">
+              กรุณากรอกรหัสผ่าน
+            </div>
+            <div id="errorMessage" style="color: red;margin-top: 10px;">
+            </div>
+          </div>
+          <button class="submitBtn" onclick="loginBtn()" style="margin-top: 27px;font-size: 1rem;">ยืนยัน</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const togglePassword = () => {
+      var x = document.getElementById("passwordInput");
+      var toggleBtn = document.getElementById('togglePasswordBtn');
+      if (x.type === "password") {
+        x.type = "text";
+        toggleBtn.alt = "show";
+        toggleBtn.src = "assets/Icons/visible.png"
+      } else {
+        x.type = "password";
+        toggleBtn.alt = "hide";
+        toggleBtn.src = "assets/Icons/hide.png"
+      }
+    }
+    const loginBtn = () => {
+      const errorMessage = document.getElementById("errorMessage");
+      const inputUsername = document.getElementById("usernameInput").value;
+      const inputPassword = document.getElementById("passwordInput").value;
+      sessionStorage.setItem("username", inputUsername);
+
+      if (inputUsername === "admin" && inputPassword === "0000") {
+        window.location.href = "/pages/admin-masterpage.html";
+      } else if (inputUsername === "staff" && inputPassword === "0000") {
+        window.location.href = "/pages/staff-masterpage.html";
+      } else {
+        errorMessage.innerText = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!";
+      }
+    }
+  </script>
+    <!-- --- Setup Account Name --- -->
+  <script>
+    localStorage.setItem('name', "พิชยะ หุตะจูฑะ");
+    localStorage.setItem('user1name', "Kittipat Pramjit");
+  </script>
+
+
+
+</body>
+
+</html>

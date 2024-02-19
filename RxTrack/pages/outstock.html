@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>ใกล้หมด</title>
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+  <div id="global-loader" style="background-color: rgb(235, 250, 255);">
+    <div class="whirly-loader"> </div>
+  </div>
+
+  <div class="content">
+    <div class="page-header">
+      <div class="page-title" style="margin-left: 2rem;">
+        <h4>ยาใกล้หมด</h4>
+        <h6>รายการยาที่ใกล้หมด</h6>
+        <div
+          style="display: flex;align-items: center;margin-top: 20px;gap: 5px;color: #777777;background-color: #ffffff;width: 90vw;height: 50px;padding-left: 20px;border: 1px solid #e8ebed;border-radius: 5px;">
+          <a onclick="navigateTo('dashboard.html')" style="color: #777777;font-size: 1rem;">ภาพรวม</a>>
+          <a style="color: #777777;font-size: 1rem;">รายการยาใกล้หมด</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="table-top">
+          <div class="search-set">
+            <div class="search-path">
+              <a class="btn btn-filter" id="filter_search">
+                <img src="/assets/Icons/funnel.png" alt="img" style="width: 20px;">
+                <span><img src="/assets/Icons/close (1).png" class="myIcons" alt="img"></span>
+              </a>
+            </div>
+            <div class="search-input">
+              <a class="btn btn-searchset"><img src="/assets/Icons/search-interface-symbol.png" alt="img"
+                  style="width: 15px;filter: opacity();"></a>
+              <div id="DataTables_Table_0_filter" class="dataTables_filter"><label> <input type="search"
+                    class="form-control form-control-sm" placeholder="Search..."
+                    aria-controls="DataTables_Table_0"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-0" id="filter_inputs">
+          <div class="card-body pb-0">
+            <div class="row">
+              <div class="col-lg-12 col-sm-12">
+                <div class="row">
+                  <div class="col-lg col-sm-6 col-12">
+                    <div class="form-group">
+                      <select class="select">
+                        <option>เลือกชนิดยา</option>
+                        <option>พาราเซตามอล</option>
+                        <option>ยา 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg col-sm-6 col-12">
+                    <div class="form-group">
+                      <select class="select">
+                        <option>เลือกหน่วยของยา</option>
+                        <option>ขวด</option>
+                        <option>แผง</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg col-sm-6 col-12">
+                    <div class="form-group">
+                      <select class="select">
+                        <option>สถานที่จัดเก็บ</option>
+                        <option>ตู้ A</option>
+                        <option>ตู้ B</option>
+                        <option>ตู้ C</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-1 col-sm-6 col-12">
+                    <div class="form-group">
+                      <a class="btn btn-filters ms-auto"><img src="/assets/Icons/research.png" class="myIcons"
+                          alt="img"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table  datanew">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>รูป</th>
+                <th>ชื่อยา</th>
+                <th>SN</th>
+                <th>หมวดหมู่</th>
+                <th>หน่วย</th>
+                <th>จำนวน</th>
+                <th>ที่จัดเก็บ</th>
+                <th>วันที่หมดอายุ</th>
+                <th>เพิ่มโดย</th>
+                <th>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>4</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/Icons/paracetamol.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>พาราเซตามอล 500mg</a></td>
+                <td>SN10000016</td>
+                <td>ยาลดไข้</td>
+                <td>แผง</td>
+                <td>28</td>
+                <td>ชั้น A01</td>
+                <td>15/10/23</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>
+                  <a class="product-img">
+                    <img src="/assets/Icons/paracetamol.jpg" class="myIcons" alt="product">
+                  </a>
+                </td>
+                <td><a>พาราเซตามอล 500mg</a></td>
+                <td>SN10000017</td>
+                <td>ยาลดไข้</td>
+                <td>แผง</td>
+                <td>9</td>
+                <td>ชั้น C01</td>
+                <td>15/10/23</td>
+                <td>เจ้าหน้าที่คลัง</td>
+                <td>
+                  <a class="me-3" onclick="navigateTo('product-edit.html')">
+                    <img src="/assets/Icons/edit (1).png" class="myIcons" alt="img">
+                  </a>
+                  <a class="confirm-text">
+                    <img src="/assets/Icons/delete.png" class="myIcons" alt="img">
+                  </a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const navigateTo = (pageName) => {
+      window.location.href = pageName;
+    }
+
+  </script>
+
+  <script src="/assets/js/jquery-3.6.0.min.js"></script>
+  <script src="/assets/js/feather.min.js"></script>
+  <script src="/assets/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
