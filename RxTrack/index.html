@@ -95,9 +95,9 @@
       sessionStorage.setItem("username", inputUsername);
 
       if (inputUsername === "admin" && inputPassword === "0000") {
-        window.location.href = "/pages/admin-masterpage.html";
+        window.location.href = "pages/admin-masterpage.html";
       } else if (inputUsername === "staff" && inputPassword === "0000") {
-        window.location.href = "/pages/staff-masterpage.html";
+        window.location.href = "pages/staff-masterpage.html";
       } else {
         errorMessage.innerText = "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!";
       }
